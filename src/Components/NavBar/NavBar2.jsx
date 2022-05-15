@@ -16,13 +16,13 @@ const NavBar2 = () => {
         <ul className="navbar-nav">
           
           <li className="nav-item">
-            <NavLink to={"/Estacionados"} className="navbar-brand nav-link">Estacionados</NavLink>
+            <NavLink to={"/Categoria/Estacionados"} className="navbar-brand nav-link">Estacionados</NavLink>
           </li>
           <li className="nav-item">
-            <NavLink to={"/Blandos"} className="navbar-brand nav-link">Blandos</NavLink>
+            <NavLink to={"/Categoria/Blandos"} className="navbar-brand nav-link">Blandos</NavLink>
           </li>
           <li className="nav-item">
-            <NavLink to={"/Otros"} className="navbar-brand nav-link">Otros</NavLink>
+            <NavLink to={"/Categoria/Otros"} className="navbar-brand nav-link">Otros</NavLink>
           </li>
          {/*  <li className="nav-item dropdown">
             <a className="nav-link dropdown-toggle" href="https://www.google.com/" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
