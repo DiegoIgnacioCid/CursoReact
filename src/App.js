@@ -1,14 +1,16 @@
 import './App.css';
-import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailContainer';
-import ItemListContainer from './Components/ItemListContainer/ItemListContainer';
-import NavBar2 from './Components/NavBar/NavBar2';
+/* import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailContainer';
+import ItemListContainer from './Components/ItemListContainer/ItemListContainer'; */
+/* import NavBar2 from './Components/NavBar/NavBar2'; */
+import Rutas from './Rutas/Rutas';
+
 
 function App() {
   return (
     <>
     <div className="App">
-
-    <NavBar2/>
+    <Rutas/>
+    {/* <NavBar2/>
     <br/>
     <div>
       <ItemListContainer/>
@@ -16,7 +18,7 @@ function App() {
     </div>
     <div>
       <ItemDetailContainer/>
-    </div>
+    </div> */}
     </div>
     
     </>

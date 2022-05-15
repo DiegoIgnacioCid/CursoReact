@@ -1,5 +1,6 @@
 import React from 'react'
 import CartWidget from '../CartWidget/CartWidget';
+import { NavLink } from 'react-router-dom';
 
 const NavBar2 = () => {
   return (
@@ -7,7 +8,7 @@ const NavBar2 = () => {
     <>
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
     <div className="container-fluid">
-      <a className="navbar-brand" href="https://www.google.com/">Käse</a>
+      <NavLink to={"/"} className="navbar-brand nav-link">Käse</NavLink>
       <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
       </button>
@@ -22,9 +23,12 @@ const NavBar2 = () => {
           <li className="nav-item">
             <a className="nav-link" href="https://www.google.com/">Blandos</a>
           </li>
-          {/* <li className="nav-item dropdown">
+          <li className="nav-item">
+            <a className="nav-link" href="https://www.google.com/">Otros</a>
+          </li>
+         {/*  <li className="nav-item dropdown">
             <a className="nav-link dropdown-toggle" href="https://www.google.com/" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Nuestros vinos
+              Otros
             </a>
             <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <li><a className="dropdown-item" href="https://www.google.com/">Malbec</a></li>
@@ -33,7 +37,7 @@ const NavBar2 = () => {
             </ul>
           </li> */}
         </ul>
-        {/* <CartWidget/> */}
+        <CartWidget/>
       </div>
     </div>
   </nav>
