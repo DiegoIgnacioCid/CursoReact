@@ -1,21 +1,27 @@
 import React from 'react'
 import "./ItemDetail.css"
 
-const ItemDetail = ({prods}) => {
+const ItemDetail = ({prods, id}) => {
 
-console.log(prods[0].Img)
+/* console.log(prods[0].Img) */
+
+/* console.log(prods, id) */
+
+console.log(prods.filter(x => x.id === id));
+
+const prodElegido = (prods.filter(x => x.id === id))[0];
 
     return (
     <>
 
 
 <div className="card" id='card'>
-    <img  src={prods[0].Img} className="card-img-top imgDetail" alt="Card"/> {/* OJO puse prods[0].Img al solo efecto de hacer display de una. Tiene que cambiar por un metodo dinamico de elegir el objeto en cuestion */}
+    <img  src={prodElegido.Img} className="card-img-top imgDetail" alt="Card"/> 
     <div className="card-body">
-        <h5 className="card-title">{prods[0].Title}</h5>
-        <p className="card-text">{prods[0].Text}</p>
-        <p className="card-text">{prods[0].Text2}</p>
-        <p className="card-text">Stock: {prods[0].Stock}</p>
+        <h5 className="card-title">{prodElegido.Title}</h5>
+        <p className="card-text">{prodElegido.Text}</p>
+        <p className="card-text">{prodElegido.Text2}</p>
+        <p className="card-text">Stock: {prodElegido.Stock}</p>
     </div>
     <ul className="list-group list-group-flush">
         

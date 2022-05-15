@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { useLocation, useParams } from 'react-router-dom';
 import {productos} from "../../Assets/Data/Data"
 import Cargando from '../Cargando/Cargando';
 import ItemDetail from '../ItemDetail/ItemDetail';
@@ -7,6 +8,11 @@ const ItemDetailContainer = () => {
 
 
     const [dataProds, setdataProds] = useState([]);
+    const location = useLocation();
+    const params = useParams();
+
+    /* console.log("location", location);
+    console.log("params", params.id); */
 
 
     useEffect(() => {
@@ -19,7 +25,7 @@ const ItemDetailContainer = () => {
     
         /* Aca lo que hacemos con la promesa */
         setdataProds(value);
-        console.log(value)
+        /* console.log(value) */
     })
     .catch((err) => console.log('Error: ' + err))
     /* .then(() => console.log(value)); */
@@ -38,7 +44,7 @@ const ItemDetailContainer = () => {
       <div className='row'>
         {/* <h1>Hola ItemListContainer</h1> */}
 
-        {dataProds.length > 0 ?  <ItemDetail prods={dataProds}/> : <Cargando/>}
+        {dataProds.length > 0 ?  <ItemDetail prods={dataProds} id={params.id}/> : <Cargando/>}
 
         {/* <ItemDetail prods={dataProds}/> */}
 

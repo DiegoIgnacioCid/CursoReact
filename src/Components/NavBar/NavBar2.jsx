@@ -14,17 +14,15 @@ const NavBar2 = () => {
       </button>
       <div className="collapse navbar-collapse" id="navbarNavDropdown">
         <ul className="navbar-nav">
+          
           <li className="nav-item">
-            <a className="nav-link active" aria-current="page" href="https://www.google.com">Home</a>
+            <NavLink to={"/Estacionados"} className="navbar-brand nav-link">Estacionados</NavLink>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="https://www.google.com/">Estacionados</a>
+            <NavLink to={"/Blandos"} className="navbar-brand nav-link">Blandos</NavLink>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="https://www.google.com/">Blandos</a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="https://www.google.com/">Otros</a>
+            <NavLink to={"/Otros"} className="navbar-brand nav-link">Otros</NavLink>
           </li>
          {/*  <li className="nav-item dropdown">
             <a className="nav-link dropdown-toggle" href="https://www.google.com/" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -36,8 +34,9 @@ const NavBar2 = () => {
               <li><a className="dropdown-item" href="https://www.google.com/">Otras cepas</a></li>
             </ul>
           </li> */}
-        </ul>
+        </ul><NavLink to={"/Cart"} className="navbar-brand nav-link">
         <CartWidget/>
+        </NavLink>
       </div>
     </div>
   </nav>
