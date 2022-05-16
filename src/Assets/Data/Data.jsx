@@ -2,7 +2,7 @@ export const productos = [
     {
       id: "Azul",
       Id: "Azul",
-      Categoryid: "Otros",
+      Categoryid: "Blandos",
       Img: 'https://images.unsplash.com/photo-1452195100486-9cc805987862?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80',
       Title: "Azul",
       Text: "Queso azul.",
@@ -61,6 +61,17 @@ export const productos = [
       Img: "https://elportaldelchacinado.com/media/provolone2_fzh8ex.jpg",
       Title: "Queso Provolone",
       Text: "Queso Provolone estacionado",
+      Text2: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur rem expedita natus ipsa magnam reiciendis numquam consequuntur eveniet id. Sit ducimus, excepturi iste eius est ipsam soluta quae blanditiis saepe?",
+      Stock: 30,
+      link: "Seguir link",
+    
+    },
+    {
+      id: "Parmesano",
+      Categoryid: "Estacionados",
+      Img: "https://cdn2.civitatis.com/italia/parma/galeria/header/fabrica-quesos-parmesanos.jpg",
+      Title: "Queso Parmesano",
+      Text: "Queso Parmesano estacionado",
       Text2: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur rem expedita natus ipsa magnam reiciendis numquam consequuntur eveniet id. Sit ducimus, excepturi iste eius est ipsam soluta quae blanditiis saepe?",
       Stock: 30,
       link: "Seguir link",

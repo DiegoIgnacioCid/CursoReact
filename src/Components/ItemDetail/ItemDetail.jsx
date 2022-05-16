@@ -1,15 +1,37 @@
-import React from 'react'
+import React, { useState } from 'react'
+import ItemCount from '../ItemCount/ItemCount';
 import "./ItemDetail.css"
 
 const ItemDetail = ({prods, id}) => {
 
-/* console.log(prods[0].Img) */
+const [carrito, setCarrito] = useState()
 
-/* console.log(prods, id) */
+function onAdd(quantityToAdd) {
+// Hemos recibido un evento del ItemCount
+console.log("Data recibida desde ItemCount: ", quantityToAdd);
+setCarrito(quantityToAdd);
+    }
 
-console.log(prods.filter(x => x.id === id));
+console.log("Carrito desde ItemDetail: ", carrito);
+
+
+/* console.log(prods.filter(x => x.id === id)); */
 
 const prodElegido = (prods.filter(x => x.id === id))[0];
+
+
+
+/* useEffect(() => {
+  onAdd(5);
+
+  return () => {
+    
+  }
+}, []) */
+
+
+
+
 
     return (
     <>
@@ -26,9 +48,10 @@ const prodElegido = (prods.filter(x => x.id === id))[0];
     <ul className="list-group list-group-flush">
         
         <li className="list-group-item">
-        {/* <ItemCount
-        stock={prods.Stock}
-        ></ItemCount> */}
+        <ItemCount
+        stock={prodElegido.Stock}
+        fn={onAdd}
+        ></ItemCount>
         </li>
         
     </ul>

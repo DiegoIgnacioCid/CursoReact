@@ -6,4 +6,9 @@
 .card {
     width: 20% !important;
     margin: 3% !important;
+    height: auto !important;
 }
+
+/* .card-body {
+    height: auto !important;
+} */

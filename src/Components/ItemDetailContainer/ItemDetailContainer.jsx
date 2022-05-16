@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useLocation, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import {productos} from "../../Assets/Data/Data"
 import Cargando from '../Cargando/Cargando';
 import ItemDetail from '../ItemDetail/ItemDetail';
@@ -8,7 +8,7 @@ const ItemDetailContainer = () => {
 
 
     const [dataProds, setdataProds] = useState([]);
-    const location = useLocation();
+    /* const location = useLocation(); */
     const params = useParams();
 
     /* console.log("location", location);
@@ -18,7 +18,7 @@ const ItemDetailContainer = () => {
     useEffect(() => {
       
      const myPromise = new Promise(function(myResolve, myReject) {
-        setTimeout(function() { myResolve(productos); }, 3000);
+        setTimeout(function() { myResolve(productos); }, 2000);
         });
 
         myPromise.then(function(value) {
