@@ -8,8 +8,12 @@ const CartItemList = (data) => {
     console.log("Datos en CartItemList: ", datos);
   return (
       <>
-    <div>CartItemList</div>
-    {datos.length > 0 ? datos.map((prod) => <CartItem key={prod.id} prods={prod}/>) : <h3>El carrito esta vacio</h3>}
+    <div className='container'>
+<div className='row'>
+        {datos.length > 0 ? datos.map((prod) => <CartItem key={prod.id} prods={prod}/>) : <h3>El carrito esta vacio</h3>}
+
+</div>
+    </div>
       </>
   )
 }

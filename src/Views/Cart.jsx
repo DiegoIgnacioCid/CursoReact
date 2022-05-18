@@ -16,11 +16,14 @@ const Cart = () => {
 
   return (
     <>
-    <div>Cart</div>
-<CartContext>
-
+<div className='container'>
+  <div className='row'>
+<h2>Carrito: </h2>
       <CartItemList data={{cart}}/>
-</CartContext>
+
+  </div>
+</div>
+
     </>
   )
 }

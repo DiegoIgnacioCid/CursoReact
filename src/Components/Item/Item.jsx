@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 const Item = ({prods}) => {
 
-
+console.log("prods desde Item", prods);
 
     /*   console.log(prod.prods) */
     return (
@@ -17,6 +17,7 @@ const Item = ({prods}) => {
     <div className="card-body">
         <h5 className="card-title">{prods.Title}</h5>
         <p className="card-text">{prods.Text}</p>
+        <p className="card-text">{'Precio: $ ' + prods.Precio}</p>
         <Link to={`/ItemDetail/${prods.id}`} style={{ textDecoration: 'none' }}>
         <p className="card-text">Ver Detalle</p>
         </Link>

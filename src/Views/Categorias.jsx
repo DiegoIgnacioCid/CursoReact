@@ -6,7 +6,7 @@ import ItemList from '../Components/ItemList/ItemList';
 const Categorias = () => {
 
     const {Categoriaid} = useParams();
-    console.log(Categoriaid);
+    /* console.log(Categoriaid); */
     
     const [dataProds, setdataProds] = useState([]);
 
@@ -28,10 +28,10 @@ const Categorias = () => {
       
     }, [])
 
-    console.log(dataProds)
+   /*  console.log(dataProds) */
 
     const catElegida = (dataProds.filter(x => x.Categoryid === Categoriaid));
-    console.log(catElegida);
+    /* console.log(catElegida); */
     
   return (
    <>

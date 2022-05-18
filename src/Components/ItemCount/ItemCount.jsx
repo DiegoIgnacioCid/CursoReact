@@ -29,24 +29,11 @@ const ItemCount = ({prod, stock/* , fn */}) => {
     }
 
     const handleAgregarCarrito = () => {
-       /*  setDisable(true); */
-        addToCart(prod.id, contador);
+        setDisable(true);
+        addToCart(prod.id, contador, prod.Precio);
     }
     
-    /* function handleAgregarAlCarrito() {
-        setCarrito(contador);
-        fn(contador);
-        setDisable(true);
-        addToCart({
-            id: prod.id,
-            cantidad: contador,
-        })
-    } */
-    
-   /* 
-    
-    console.log(cart);
-     */
+
 
 
   return (

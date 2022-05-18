@@ -8,6 +8,7 @@ export const productos = [
       Text: "Queso azul.",
       Text2: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur rem expedita natus ipsa magnam reiciendis numquam consequuntur eveniet id. Sit ducimus, excepturi iste eius est ipsam soluta quae blanditiis saepe?",
       Stock: 8,
+      Precio: 65,
       link: "Seguir link",
     
     },
@@ -19,6 +20,7 @@ export const productos = [
       Text: "Queso madurado en barrica.",
       Text2: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur rem expedita natus ipsa magnam reiciendis numquam consequuntur eveniet id. Sit ducimus, excepturi iste eius est ipsam soluta quae blanditiis saepe?",
       Stock: 3,
+      Precio: 50,
       link: "Seguir link",
     
     },
@@ -30,6 +32,7 @@ export const productos = [
       Text: "Otros quesos.",
       Text2: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur rem expedita natus ipsa magnam reiciendis numquam consequuntur eveniet id. Sit ducimus, excepturi iste eius est ipsam soluta quae blanditiis saepe?",
       Stock: 300,
+      Precio: 40,
       link: "Seguir link",
     
     },
@@ -41,6 +44,7 @@ export const productos = [
       Text: "Queso cremoso La Serenisima.",
       Text2: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur rem expedita natus ipsa magnam reiciendis numquam consequuntur eveniet id. Sit ducimus, excepturi iste eius est ipsam soluta quae blanditiis saepe?",
       Stock: 250,
+      Precio: 70,
       link: "Seguir link",
     
     },
@@ -52,6 +56,7 @@ export const productos = [
       Text: "Queso Feta.",
       Text2: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur rem expedita natus ipsa magnam reiciendis numquam consequuntur eveniet id. Sit ducimus, excepturi iste eius est ipsam soluta quae blanditiis saepe?",
       Stock: 240,
+      Precio: 70,
       link: "Seguir link",
     
     },
@@ -63,6 +68,7 @@ export const productos = [
       Text: "Queso Provolone estacionado",
       Text2: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur rem expedita natus ipsa magnam reiciendis numquam consequuntur eveniet id. Sit ducimus, excepturi iste eius est ipsam soluta quae blanditiis saepe?",
       Stock: 30,
+      Precio: 45,
       link: "Seguir link",
     
     },
@@ -74,6 +80,7 @@ export const productos = [
       Text: "Queso Parmesano estacionado",
       Text2: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur rem expedita natus ipsa magnam reiciendis numquam consequuntur eveniet id. Sit ducimus, excepturi iste eius est ipsam soluta quae blanditiis saepe?",
       Stock: 30,
+      Precio: 70,
       link: "Seguir link",
     
     },

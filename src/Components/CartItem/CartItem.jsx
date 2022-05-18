@@ -1,12 +1,18 @@
 import React from 'react'
 
 const CartItem = ({prods}) => {
-    /* console.log("item en CartItem: ", item); */
+    console.log("item en CartItem: ", prods);
     /* const prod = item.prods; */
   return (
     <>
-    <h5>{prods.id}</h5>
-    <p>{prods.cantidad}</p>
+    <div>
+    <span>Queso {prods.id}. Cantidad: </span>
+    <span>{prods.cantidad}. </span>
+    <span>Precio unitario: {prods.precio}. </span>
+    <span>Precio total: {prods.precioTotal}.</span>
+    <button className="btn btn-success my-4">Eliminar del carrito.</button>
+
+    </div>
     </>
   )
 }

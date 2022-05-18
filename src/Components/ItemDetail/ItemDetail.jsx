@@ -4,34 +4,10 @@ import "./ItemDetail.css"
 
 const ItemDetail = ({prods, id}) => {
 
-/* const [carrito, setCarrito] = useState({
-    
-}) */
-
-/* function onAdd(quantityToAdd) {
-// Hemos recibido un evento del ItemCount
- console.log("Data recibida desde ItemCount: ", quantityToAdd);
-setCarrito(quantityToAdd);
-     }*/
-
-/* console.log("Carrito desde ItemDetail: ", carrito); */
-
-
-/* console.log(prods.filter(x => x.id === id)); */
+/* console.log("itemDetail prods", prods); */
 
 const prodElegido = (prods.filter(x => x.id === id))[0];
-
-
-
-/* useEffect(() => {
-  onAdd(5);
-
-  return () => {
-    
-  }
-}, []) */
-
-
+/* console.log(prodElegido.Precio); */
 
 
 
@@ -44,6 +20,7 @@ const prodElegido = (prods.filter(x => x.id === id))[0];
     <div className="card-body">
         <h5 className="card-title">{prodElegido.Title}</h5>
         <p className="card-text">{prodElegido.Text}</p>
+        <p className="card-text">{'Precio: $ ' + prodElegido.Precio}</p>
         <p className="card-text">{prodElegido.Text2}</p>
         <p className="card-text">Stock: {prodElegido.Stock}</p>
     </div>
