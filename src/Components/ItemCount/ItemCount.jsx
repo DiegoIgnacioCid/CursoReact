@@ -1,13 +1,20 @@
-import React, {useState} from 'react'
+import React, {useContext, useState} from 'react'
 import { NavLink } from 'react-router-dom';
+import { GlobalContext } from '../GlobalStateContext/CartContext';
+import "./ItemCount.css"
 
 
 
-const ItemCount = ({stock, fn}) => {
+const ItemCount = ({prod, stock, fn}) => {
     
     const [contador, setContador] = useState(0);
     const [carrito, setCarrito] = useState(0);
     const [disable, setDisable] = useState(false);
+
+    const {cart, setCart, addToCart} = useContext(GlobalContext);
+
+    console.log(prod);
+    console.log(cart);
     
     function sumar() {
         if (contador < stock) {
@@ -28,9 +35,20 @@ const ItemCount = ({stock, fn}) => {
         fn(contador);
         setDisable(true);
 
-       
-    }
+        cart.filter(x => x.id == prod.id) ? console.log("estaba") : console.log("no estaba")
+        
 
+        addToCart({
+            id: prod.id,
+            cantidad: contador,
+        })
+      
+        
+    }
+    
+   
+    
+    console.log(cart);
     
 
 
@@ -39,13 +57,13 @@ const ItemCount = ({stock, fn}) => {
     <>
     {/* <p>Stock actual: {stock}</p> */}
     <div>
-        <button disabled={disable} onClick={restar}> - </button>
-        <span>{contador}</span>
-        <button disabled={disable} onClick={sumar}> + </button>
+        <button className="btn btn-success my-4" disabled={disable} onClick={restar}> - </button>
+        <span className='span'>{contador}</span>
+        <button className="btn btn-success my-4" disabled={disable} onClick={sumar}> + </button>
         <br />
-        <button disabled={disable} onClick={handleAgregarAlCarrito}>Agregar al carrito.</button>
-        <NavLink to={"/Cart"} className="navbar-brand nav-link">
-        <button>Terminar mi compra.</button>
+        <button className="btn btn-success my-4" disabled={disable} onClick={handleAgregarAlCarrito}>Agregar al carrito.</button>
+        <NavLink to={"/Cart"} classNameName="navbar-brand nav-link">
+        <button className="btn btn-success my-4">Terminar mi compra.</button>
         </NavLink>
     </div>
     </>

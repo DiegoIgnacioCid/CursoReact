@@ -49,6 +49,7 @@ const prodElegido = (prods.filter(x => x.id === id))[0];
         
         <li className="list-group-item">
         <ItemCount
+        prod={prodElegido}
         stock={prodElegido.Stock}
         fn={onAdd}
         ></ItemCount>
