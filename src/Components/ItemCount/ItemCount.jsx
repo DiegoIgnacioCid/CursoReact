@@ -35,7 +35,7 @@ const ItemCount = ({prod, stock, fn}) => {
         fn(contador);
         setDisable(true);
 
-        cart.filter(x => x.id == prod.id) ? console.log("estaba") : console.log("no estaba")
+        /* cart.filter(x => x.id == prod.id) ? console.log("estaba") : console.log("no estaba") */
         
 
         addToCart({
