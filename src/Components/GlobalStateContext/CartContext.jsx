@@ -7,7 +7,29 @@ export const GlobalContext = createContext('');
 const CartContext = ({children}) => {
   
   const [cart, setCart] = useState([])
-  /* const [cartTotal, setcartTotal] = useState([]) */
+  const [cartTotal, setcartTotal] = useState(0);
+  const [cantidadTotal, setcantidadTotal] = useState(0);
+
+
+  // sirve para llevar la cuenta del total de la compra
+  let total = 0;
+  const contadorTotal = () => {
+    cart.map(x => total += x.precioTotal);
+    console.log("total en cartContext", total);
+    setcartTotal(total);
+  }
+ 
+  let cantiTotal = 0;
+  const contadorCantTotal = () => {
+    cart.map(x => cantiTotal += x.cantidad);
+    setcantidadTotal(cantiTotal);
+  }
+  
+  useEffect(() => {
+    contadorTotal(); 
+    contadorCantTotal();
+    
+  }, [cart])
   
   // las funciones pedidas en la consigna.
   
@@ -64,7 +86,7 @@ useEffect(() => {
   const clear = () => setCart([]);
 
   return (
-      <GlobalContext.Provider value={{cart, setCart, addToCart, clear}}>
+      <GlobalContext.Provider value={{cart, setCart, addToCart, clear, cartTotal, cantidadTotal}}>
         {children}
       </GlobalContext.Provider>
   )

@@ -4,7 +4,7 @@ import CartContext, { GlobalContext } from '../Components/GlobalStateContext/Car
 
 const Cart = () => {
 
-  const {cart, addToCart} = useContext(GlobalContext);
+  const {cart, addToCart, cartTotal, cantidadTotal} = useContext(GlobalContext);
   
 
 
@@ -21,6 +21,10 @@ const Cart = () => {
 <h2>Carrito: </h2>
       <CartItemList data={{cart}}/>
 
+  </div>
+  <div>
+    <h3>Total de la compra: {cartTotal}</h3>
+    <h3>Cantidad total de items: {cantidadTotal}</h3>
   </div>
 </div>
 
