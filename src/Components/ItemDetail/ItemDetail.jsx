@@ -4,15 +4,15 @@ import "./ItemDetail.css"
 
 const ItemDetail = ({prods, id}) => {
 
-const [carrito, setCarrito] = useState({
+/* const [carrito, setCarrito] = useState({
     
-})
+}) */
 
-function onAdd(quantityToAdd) {
+/* function onAdd(quantityToAdd) {
 // Hemos recibido un evento del ItemCount
-/* console.log("Data recibida desde ItemCount: ", quantityToAdd); */
+ console.log("Data recibida desde ItemCount: ", quantityToAdd);
 setCarrito(quantityToAdd);
-    }
+     }*/
 
 /* console.log("Carrito desde ItemDetail: ", carrito); */
 
@@ -53,7 +53,7 @@ const prodElegido = (prods.filter(x => x.id === id))[0];
         <ItemCount
         prod={prodElegido}
         stock={prodElegido.Stock}
-        fn={onAdd}
+        /* fn={onAdd} */
         ></ItemCount>
         </li>
         

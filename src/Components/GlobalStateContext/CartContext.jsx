@@ -11,15 +11,23 @@ const CartContext = ({children}) => {
   // las funciones pedidas en la consigna.
   
   const isInCart = (producto) => {
-    console.log("producto: ", producto, "cart; ", cart);
-   cart.find(x => x.id == producto) ? console.log("estaba") : console.log("no estaba");
-   cart.map(x => console.log(x));
+    /* console.log("producto: ", producto, "cart; ", cart);
+   cart.find(x => x.id === producto) ? console.log("estaba") : console.log("no estaba");
+   cart.map(x => console.log(x)); */
  }
 
   const addToCart= (producto, cantidad) => {
       console.log("producto agregado al carrito:", producto, "cantidad: ", cantidad);
-      isInCart(producto);
-      setCart(...cart, producto);
+      /* isInCart(producto); */
+      const nuevoObj = {
+        id: producto,
+        cantidad: cantidad
+      }
+      console.log(nuevoObj);
+      setCart([... cart, nuevoObj]); 
+      /* setCart(prevCart => [...prevCart, producto]) */
+      console.log("Nuevo estado del carrito:", cart);
+      console.log("Nuevo estado del carrito tyope:",typeof cart);
   }
 
 /*

@@ -1,10 +1,12 @@
 import React from 'react'
 
-const CartItem = (item) => {
+const CartItem = ({prods}) => {
+    /* console.log("item en CartItem: ", item); */
+    /* const prod = item.prods; */
   return (
     <>
-    <h5>{item.id}</h5>
-    <p>{item.cantidad}</p>
+    <h5>{prods.id}</h5>
+    <p>{prods.cantidad}</p>
     </>
   )
 }

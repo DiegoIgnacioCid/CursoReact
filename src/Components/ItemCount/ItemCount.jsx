@@ -5,7 +5,7 @@ import "./ItemCount.css"
 
 
 
-const ItemCount = ({prod, stock, fn}) => {
+const ItemCount = ({prod, stock/* , fn */}) => {
     
     const [contador, setContador] = useState(0);
     const [disable, setDisable] = useState(false);
