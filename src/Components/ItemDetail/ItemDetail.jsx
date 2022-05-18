@@ -4,15 +4,17 @@ import "./ItemDetail.css"
 
 const ItemDetail = ({prods, id}) => {
 
-const [carrito, setCarrito] = useState()
+const [carrito, setCarrito] = useState({
+    
+})
 
 function onAdd(quantityToAdd) {
 // Hemos recibido un evento del ItemCount
-console.log("Data recibida desde ItemCount: ", quantityToAdd);
+/* console.log("Data recibida desde ItemCount: ", quantityToAdd); */
 setCarrito(quantityToAdd);
     }
 
-console.log("Carrito desde ItemDetail: ", carrito);
+/* console.log("Carrito desde ItemDetail: ", carrito); */
 
 
 /* console.log(prods.filter(x => x.id === id)); */

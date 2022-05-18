@@ -8,13 +8,12 @@ import "./ItemCount.css"
 const ItemCount = ({prod, stock, fn}) => {
     
     const [contador, setContador] = useState(0);
-    const [carrito, setCarrito] = useState(0);
     const [disable, setDisable] = useState(false);
 
-    const {cart, setCart, addToCart} = useContext(GlobalContext);
+    const {cart, addToCart} = useContext(GlobalContext);
 
-    console.log(prod);
-    console.log(cart);
+  /*   console.log(prod);
+    console.log(cart); */
     
     function sumar() {
         if (contador < stock) {
@@ -28,28 +27,26 @@ const ItemCount = ({prod, stock, fn}) => {
             setContador(contador - 1);
         }
     }
+
+    const handleAgregarCarrito = () => {
+       /*  setDisable(true); */
+        addToCart(prod.id, contador);
+    }
     
-    function handleAgregarAlCarrito() {
+    /* function handleAgregarAlCarrito() {
         setCarrito(contador);
-        /* console.log("contador: ", contador, "carrito: ", carrito); */
         fn(contador);
         setDisable(true);
-
-        /* cart.filter(x => x.id == prod.id) ? console.log("estaba") : console.log("no estaba") */
-        
-
         addToCart({
             id: prod.id,
             cantidad: contador,
         })
-      
-        
-    }
+    } */
     
-   
+   /* 
     
     console.log(cart);
-    
+     */
 
 
   return (
@@ -61,8 +58,8 @@ const ItemCount = ({prod, stock, fn}) => {
         <span className='span'>{contador}</span>
         <button className="btn btn-success my-4" disabled={disable} onClick={sumar}> + </button>
         <br />
-        <button className="btn btn-success my-4" disabled={disable} onClick={handleAgregarAlCarrito}>Agregar al carrito.</button>
-        <NavLink to={"/Cart"} classNameName="navbar-brand nav-link">
+        <button className="btn btn-success my-4" disabled={disable} onClick={handleAgregarCarrito}>Agregar al carrito.</button>
+        <NavLink to={"/Cart"} className="navbar-brand nav-link">
         <button className="btn btn-success my-4">Terminar mi compra.</button>
         </NavLink>
     </div>
