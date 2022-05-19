@@ -4,12 +4,12 @@ import CartContext, { GlobalContext } from '../Components/GlobalStateContext/Car
 
 const Cart = () => {
 
-  const {cart, addToCart, cartTotal, cantidadTotal} = useContext(GlobalContext);
+  const {cart, addToCart, cartTotal, cantidadTotal, clear} = useContext(GlobalContext);
   
 
 
 
-  console.log("data en Cart: ", cart);
+  /* console.log("data en Cart: ", cart); */
 
 /*   const {cart, addToCart} = useContext(GlobalContext);
   console.log("data en Cart: ", cart); */
@@ -23,8 +23,11 @@ const Cart = () => {
 
   </div>
   <div>
-    <h3>Total de la compra: {cartTotal}</h3>
-    <h3>Cantidad total de items: {cantidadTotal}</h3>
+    {cartTotal > 0 ? <h3>Total de la compra: {cartTotal}</h3> : <></>}
+    {cartTotal > 0 ?  <h3>Cantidad total de items: {cantidadTotal}</h3> : <></>}
+    {/* <h3>Total de la compra: {cartTotal}</h3>
+    <h3>Cantidad total de items: {cantidadTotal}</h3> */}
+    <button className="btn btn-success my-4" onClick={clear}>Vaciar carrito.</button>
   </div>
 </div>
 

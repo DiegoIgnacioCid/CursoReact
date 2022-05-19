@@ -24,10 +24,30 @@ const CartContext = ({children}) => {
     cart.map(x => cantiTotal += x.cantidad);
     setcantidadTotal(cantiTotal);
   }
+
+
+  const eliminarProd = (producto) => {
+    let copiaArray = cart;
+    const indexProd = copiaArray.findIndex(x => x.id === producto);
+    console.log("cart", cart);
+    cart.map(x => console.log(x));
+    console.log("producto", producto);
+    console.log("indexprod", indexProd);
+    console.log("copiaArray", copiaArray);
+    copiaArray.splice(indexProd);
+    console.log("copiaArray",  copiaArray);
+    console.log("nuevo cart", cart);
+    setCart(copiaArray);
+    contadorTotal(); 
+    contadorCantTotal();
+ }
+
   
   useEffect(() => {
     contadorTotal(); 
     contadorCantTotal();
+    console.log("Cambio contador total o cantidad total. Usado el UseEffect del CartContext")
+    console.log("Nuevo cart: ", cart);
     
   }, [cart])
   
@@ -38,9 +58,11 @@ const CartContext = ({children}) => {
     return cart.findIndex(x => x.id === producto) /* ? console.log("estaba") : console.log("no estaba"); */
    /* cart.map(x => console.log(x)); */
  }
+ 
+ 
 
   const addToCart= (producto, cantidad, precio) => {
-      console.log("producto agregado al carrito:", producto, "cantidad: ", cantidad);
+      /* console.log("producto agregado al carrito:", producto, "cantidad: ", cantidad); */
       if (isInCart(producto) == -1) {
         const nuevoObj = {
           id: producto,
@@ -48,17 +70,17 @@ const CartContext = ({children}) => {
           precio: precio, 
           precioTotal: (precio * cantidad)
         }
-        console.log(nuevoObj);
+       /*  console.log(nuevoObj); */
         setCart([... cart, nuevoObj]); 
-        console.log("Nuevo estado del carrito (if):", cart);
+        /* console.log("Nuevo estado del carrito (if):", cart); */
 
       } else {
         const cantNueva = cart[isInCart(producto)].cantidad + cantidad;
         const newArray = [...cart];
         newArray[isInCart(producto)].cantidad = cantNueva;
-        console.log(newArray);
+        /* console.log(newArray); */
         setCart(newArray); 
-        console.log("Nuevo estado del carrito (else):", cart);
+        /* console.log("Nuevo estado del carrito (else):", cart); */
 
       }
       /* setCart(prevCart => [...prevCart, producto]) */
@@ -66,12 +88,12 @@ const CartContext = ({children}) => {
       console.log("Nuevo estado del carrito tyope:",typeof cart); */
   }
 
-useEffect(() => {
+/* useEffect(() => {
   console.log("Nuevo estado del carrito (useEffect):", cart);
   
 
   
-}, [])
+}, []) */
 
 
 /*
@@ -85,8 +107,10 @@ useEffect(() => {
 
   const clear = () => setCart([]);
 
+  
+
   return (
-      <GlobalContext.Provider value={{cart, setCart, addToCart, clear, cartTotal, cantidadTotal}}>
+      <GlobalContext.Provider value={{cart, setCart, addToCart, clear, cartTotal, cantidadTotal, eliminarProd}}>
         {children}
       </GlobalContext.Provider>
   )

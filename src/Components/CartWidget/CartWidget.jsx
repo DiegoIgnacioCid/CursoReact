@@ -7,15 +7,15 @@ import "./CartWidget.css"
 const Cart = () => {
 
   const {cart, cantidadTotal} = useContext(GlobalContext);
-  console.log("Cart en cartwidget: ", cart);
-  console.log("Cart length en cartwidget: ", cart.length);
+/*   console.log("Cart en cartwidget: ", cart);
+  console.log("Cart length en cartwidget: ", cart.length); */
 
   const largo = cart.length;
 
   return (
 <>
     {/* {largo > 0 ? <BsFillCartCheckFill /> : <BiCart />} */}
-    {largo > 0 ? <i class="fa badge fa-lg" value={cantidadTotal}>&#xf07a;</i> : <></>}
+    {largo > 0 ? <i className="fa badge fa-lg" value={cantidadTotal}>&#xf07a;</i> : <></>}
     
 
     

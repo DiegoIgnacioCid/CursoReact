@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 const Item = ({prods}) => {
 
-console.log("prods desde Item", prods);
+/* console.log("prods desde Item", prods); */
 
     /*   console.log(prod.prods) */
     return (

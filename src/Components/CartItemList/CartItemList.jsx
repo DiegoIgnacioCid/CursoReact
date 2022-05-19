@@ -2,10 +2,10 @@ import React from 'react'
 import CartItem from '../CartItem/CartItem'
 
 const CartItemList = (data) => {
-    console.log("cartItemList data: ", data);
-    console.log(data.data.cart)
+   /*  console.log("cartItemList data: ", data);
+    console.log(data.data.cart) */
     const datos = data.data.cart
-    console.log("Datos en CartItemList: ", datos);
+    /* console.log("Datos en CartItemList: ", datos); */
   return (
       <>
     <div className='container'>
