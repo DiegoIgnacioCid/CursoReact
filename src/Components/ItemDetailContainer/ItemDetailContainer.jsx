@@ -3,6 +3,8 @@ import { useParams } from 'react-router-dom';
 import {productos} from "../../Assets/Data/Data"
 import Cargando from '../Cargando/Cargando';
 import ItemDetail from '../ItemDetail/ItemDetail';
+import db from '../../Service/firebase';
+import { doc, getDoc, getDocs, collection } from "firebase/firestore";
 
 const ItemDetailContainer = () => {
 
@@ -14,21 +16,35 @@ const ItemDetailContainer = () => {
     /* console.log("location", location);
     console.log("params", params.id); */
 
+    const getData = async () => {
+      const col = collection(db, 'Productos')
+      try {
+        const data = await getDocs(col)
+        const result = data.docs.map(doc => doc = {id: doc.id, ...doc.data()})
+        setdataProds(result)
+        console.log(result)
+      } catch (error) {
+        console.log("Error")
+        console.log(error)
+      }
+    }
+
 
     useEffect(() => {
       
-     const myPromise = new Promise(function(myResolve, myReject) {
+      getData();
+
+
+
+     /* const myPromise = new Promise(function(myResolve, myReject) {
         setTimeout(function() { myResolve(productos); }, 2000);
         });
 
         myPromise.then(function(value) {
     
-        /* Aca lo que hacemos con la promesa */
         setdataProds(value);
-        /* console.log(value) */
     })
-    .catch((err) => console.log('Error: ' + err))
-    /* .then(() => console.log(value)); */
+    .catch((err) => console.log('Error: ' + err)) */
       
     }, [])
 
