@@ -15,8 +15,8 @@ const Formulario = ({total, compra}) => {
           apellido: "",
           telefono: "",
       },
-      total: total,
-      items: compra
+      total: 10,
+      items: "compra"
   });
   
   const handleChange = (e) => {
@@ -40,6 +40,8 @@ const Formulario = ({total, compra}) => {
   const fetchGenerateTicket = async ({datos}) => {
     try {
         const col = collection(db, "ordenes")
+        console.log(col)
+        console.log("datos", datos)
         const order = await addDoc(col, datos)
         console.log(order.id)
         console.log("datos", datos)
@@ -50,7 +52,7 @@ const Formulario = ({total, compra}) => {
   
 const onSubmit = (e) => {
     e.preventDefault();
-    fetchGenerateTicket({ datos: formulario})
+    fetchGenerateTicket({datos: formulario})
 }
 
 
