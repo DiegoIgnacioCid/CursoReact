@@ -28,7 +28,7 @@ const Cart = () => {
       </div>
 
     <div className='col col-12 col-lg-6'>
-        <Formulario/>
+        <Formulario cantTotal={{cartTotal}} compra={{cantidadTotal}}/>
     </div>
 
 

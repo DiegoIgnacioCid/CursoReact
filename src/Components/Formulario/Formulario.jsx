@@ -5,8 +5,11 @@ import { addDoc, collection } from 'firebase/firestore'
 
 import db from '../../Service/firebase'
 
-const Formulario = ({total, compra}) => {
+const Formulario = ({cantTotal, compra}) => {
   
+  /* console.log(cantTotal, compra); */
+  console.log("cantTotal: ", cantTotal);
+  console.log("compra", compra);
   
   const [formulario, setformulario] = useState({
       buyer: {
@@ -15,8 +18,8 @@ const Formulario = ({total, compra}) => {
           apellido: "",
           telefono: "",
       },
-      total: 10,
-      items: "compra"
+      total: cantTotal.cartTotal,
+      items: compra.cantidadTotal
   });
   
   const handleChange = (e) => {
